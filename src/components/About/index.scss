@@ -1,0 +1,112 @@
+section#about {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .about-head {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h2 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      font-family: "Josefin Sans", sans-serif;
+      background: linear-gradient(
+        to right,
+        hsl(98 100% 62%),
+        hsl(204 100% 59%)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+  }
+  .about-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em 2em;
+    .content-img {
+      position: absolute;
+      width: 110%;
+      max-width: 900px;
+      right: 3%;
+      bottom: -65px;
+      z-index: -1;
+      filter: drop-shadow(0px 0px 10px #145b6d);
+      object-fit: cover;
+    }
+    .about-content-detail {
+      max-width: 600px;
+      padding: 1.5em 2.5em;
+      border-radius: 12px;
+      p {
+        font-size: 1.2rem;
+        font-weight: 500;
+        font-family: "Josefin Sans";
+        margin-bottom: 3.5rem;
+        line-height: 25px;
+        span:first-of-type {
+          font-size: 1.75rem;
+          background: #ff5858;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-family: "Roboto Slab", serif;
+          font-weight: bold;
+        }
+        span:last-of-type {
+          font-size: 1.75rem;
+          background: #ffad17;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-family: "Roboto Slab", serif;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 2400px) {
+  #about .content-img {
+    right: 15% !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  section#about .about-content .content-img {
+    width: 125%;
+    right: -5%;
+    bottom: -30px;
+  }
+  section#about {
+    padding-top: 23%;
+  }
+  section#about .about-content .about-content-detail{
+    padding: 5.5em 2.5em 0em 2.5em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  section#about .about-content .content-img {
+    width: 230%;
+    max-width: 1000px;
+    right: -26%;
+    bottom: -12px;
+  }
+  section#about {
+    margin-top: 15%;
+  }
+  section#about .about-head {
+    justify-content: flex-end;
+  }
+  section#about .about-content .about-content-detail {
+    padding: 3.5em 2.5em 0em 2.5em;
+  }
+}
