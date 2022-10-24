@@ -80,6 +80,11 @@ section#about {
     right: 15% !important;
   }
 }
+@media only screen and (max-width: 1440px) {
+  section#about .about-content .about-content-detail p {
+    margin-bottom: 1rem;
+  }
+}
 @media only screen and (max-width: 1024px) {
   section#about .about-content .content-img {
     width: 125%;
@@ -89,24 +94,51 @@ section#about {
   section#about {
     padding-top: 23%;
   }
-  section#about .about-content .about-content-detail{
-    padding: 5.5em 2.5em 0em 2.5em;
+  section#about .about-content .about-content-detail {
+    padding: 0em;
+  }
+  section#about .about-content .about-content-detail p {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
   }
 }
 @media only screen and (max-width: 768px) {
   section#about .about-content .content-img {
     width: 230%;
     max-width: 1000px;
-    right: -26%;
-    bottom: -12px;
+    right: -15%;
+    bottom: -125px;
   }
   section#about {
     margin-top: 15%;
   }
-  section#about .about-head {
-    justify-content: flex-end;
+  section#about .about-content .about-content-detail p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
-  section#about .about-content .about-content-detail {
-    padding: 3.5em 2.5em 0em 2.5em;
+}
+@media only screen and (max-width: 475px) {
+  section#about .about-content {
+    padding: 0em;
+  }
+  section#about .about-content .content-img {
+    width: 250%;
+    max-width: 1000px;
+    right: -55%;
+    bottom: -145px;
+  }
+  section#about .about-head h2 {
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 375px) {
+  section#about .about-content .content-img {
+    bottom: -70px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  section#about .about-content .content-img {
+    width: 320%;
   }
 }

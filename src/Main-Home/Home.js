@@ -7,10 +7,8 @@ import "./index.scss";
 // Components
 import About from "../components/About/About";
 import Footer from "../components/Footer/Footer";
-import Contact from "../components/Contact/Contact";
 import Skills from "../components/Skills/Skills";
 import Experience from "../components/Skills/Experience";
-//
 
 function Home() {
   const [isFormActive, setFormActive] = useState("false");
@@ -34,74 +32,70 @@ function Home() {
     <div id="main">
       <div className={isFormActive ? "" : "main-content-blur-content"}>
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-12">
-              <nav className="navbar main-nav fixed-top">
-                <a href="#home">
-                  <h1>
-                    <div>A</div>
-                    <div>C</div>
-                    <div>E</div>
-                  </h1>
-                </a>
-                <div className="nav-slider m-auto">
-                  <ul className="nav navbar-nav">
-                    <li className="nav-item">
-                      <a className="nav-link" href="#about">
-                        About
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#skill">
-                        Skills & Experience
-                      </a>
-                    </li>
+          <nav className="navbar main-nav fixed-top">
+            <a href="#home">
+              <h1>
+                <div>A</div>
+                <div>C</div>
+                <div>E</div>
+              </h1>
+            </a>
+            <div className="nav-slider m-auto">
+              <ul className="nav navbar-nav">
+                <li className="nav-item">
+                  <a className="nav-link" href="#about">
+                    About
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#skill">
+                    Skills & Experience
+                  </a>
+                </li>
 
-                    <li className="nav-item">
-                      <div className="nav-link" onClick={handleFormToggle}>
-                        Contact
-                      </div>
-                    </li>
-                  </ul>
-                  <div id="hamburger" className={isActive ? "close" : "open"}>
-                    <div className="three col">
-                      <div
-                        className="hamburger"
-                        id="hamburger-6"
-                        onClick={handleToggle}
-                      >
-                        <span className="line"></span>
-                        <span className="line"></span>
-                        <span className="line"></span>
-                      </div>
-                    </div>
+                <li className="nav-item">
+                  <div className="nav-link" onClick={handleFormToggle}>
+                    Contact
+                  </div>
+                </li>
+              </ul>
+              <div id="hamburger" className={isActive ? "close" : "open"}>
+                <div className="three col">
+                  <div
+                    className="hamburger"
+                    id="hamburger-6"
+                    onClick={handleToggle}
+                  >
+                    <span className="line"></span>
+                    <span className="line"></span>
+                    <span className="line"></span>
                   </div>
                 </div>
-                {/* Mobile Nav Menu  Activated when scrolling*/}
-                <div
-                  id="sidebar"
-                  className={isActive ? "closed-sidebar" : "opened-sidebar"}
-                >
-                  <div className="sidebar-head">
-                    <h3>
-                      <div>Wander</div> <div>freely..</div>
-                    </h3>
-                  </div>
-                  <ul className="mobile-nav-menu nav-menu">
-                    <li className="i-2">
-                      <a href="#about">About</a>
-                    </li>
-                    <li className="i-3">
-                      <a href="#skill">Skills & Experience</a>
-                    </li>
-                    <li className="i-5">
-                      <div onClick={handleFormToggle}>Contact</div>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
+              </div>
             </div>
-          </div>
+            {/* Mobile Nav Menu  Activated when scrolling*/}
+            <div
+              id="sidebar"
+              className={isActive ? "closed-sidebar" : "opened-sidebar"}
+            >
+              <div className="sidebar-head">
+                <h3>
+                  <div>Wander</div> <div>freely..</div>
+                </h3>
+              </div>
+              <ul className="mobile-nav-menu nav-menu">
+                <li className="i-2">
+                  <a href="#about">About</a>
+                </li>
+                <li className="i-3">
+                  <a href="#skill">Skills & Experience</a>
+                </li>
+                <li className="i-5">
+                  <div onClick={handleFormToggle}>Contact</div>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
         <div
           id="social-feed-container"
@@ -136,19 +130,10 @@ function Home() {
           </div>
         </div>
         <section id="home">
-          {" "}
-          <div className="masthead-obj">
-            <div className="canvas-frame">
-              <Fade delay={1000}>
-                <div className="frame"></div>
-              </Fade>
-            </div>
-            <canvas id="canvas3d"></canvas>
-          </div>
           <div className="container-fluid hm">
             <div className="masthead">
-              <Fade direction="left">
-                <div className="home-intro">
+              <div className="home-intro">
+                <Fade delay={500}>
                   <div className="home-head">
                     <h2>
                       <div>Hey I'm, </div>
@@ -170,8 +155,17 @@ function Home() {
                       />
                     </h2>
                   </div>
+                </Fade>
+              </div>
+              <div className="masthead-objects">
+                <div className="canvas-frame">
+                  <Fade delay={1000}>
+                    <div className="frame"></div>
+                  </Fade>
                 </div>
-              </Fade>
+
+                <canvas id="canvas3d"></canvas>
+              </div>
             </div>
           </div>
         </section>
@@ -184,7 +178,6 @@ function Home() {
         <section id="experience">
           <Experience />
         </section>
-        <Contact />
         <section id="footer">
           <Footer />
         </section>

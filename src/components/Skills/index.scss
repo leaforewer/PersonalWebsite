@@ -132,11 +132,9 @@ section#skill {
   margin-top: 10%;
   padding-top: 10%;
   .card-row-banner {
-    margin-top: 10%;
-    padding: 1.75em 0em;
-    background: #32323228;
-    border-top: 1px solid #54545488;
-    border-bottom: 1px solid #54545488;
+    margin-top: 5%;
+    padding: 4em 0em;
+    border-top: 1px solid rgba(84, 84, 84, 0.5333333333);
     .col-lg-3 {
       .outer-card {
         display: flex;
@@ -287,6 +285,11 @@ section#skill {
   }
   .exp-group .row {
     gap: 3rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  section#skill .skill-head {
+    font-size: 3em;
   }
 }
 @-webkit-keyframes mover {

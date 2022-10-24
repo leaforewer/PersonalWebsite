@@ -15,21 +15,6 @@ div#root {
   width: 100%;
   overflow-x: hidden;
 }
-@media only screen and (max-width: 1440px) {
-  div#root {
-    width: 106.45%;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  div#root {
-    width: 120%;
-  }
-}
-@media only screen and (max-width: 768px) {
-  div#root {
-    width: 117%;
-  }
-}
 body::-webkit-scrollbar {
   width: 8px;
   height: 8px;

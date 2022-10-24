@@ -7,14 +7,14 @@ function About() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-6">
+        <div className="col-lg-6 col-md-12">
           <div className="about-head">
             <Fade direction="left">
               <h2>About Me</h2>
             </Fade>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-lg-6 col-md-12">
           <div className="about-content">
             <img
               className="content-img parallax-layer"
