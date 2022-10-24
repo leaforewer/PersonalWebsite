@@ -18,6 +18,7 @@ section#skill {
       hsl(98 100% 62%) 70%
     );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 1rem 0rem;
   }
@@ -31,6 +32,7 @@ section#skill {
       font-size: 1.1rem;
       background: linear-gradient(to right, #08fdd8 0%, hsl(98 100% 62%) 200%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       transition: 0.3s all ease;
       &:hover {
@@ -192,6 +194,7 @@ section#skill {
         hsl(98deg, 100%, 62%) 70%
       );
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }

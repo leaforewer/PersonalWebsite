@@ -22,7 +22,7 @@ section#about {
       );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-align: center;
+      text-align: center;background-clip: text;
     }
   }
   .about-content {
@@ -58,6 +58,7 @@ section#about {
           font-size: 1.75rem;
           background: #ff5858;
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
           font-family: "Roboto Slab", serif;
           font-weight: bold;
@@ -66,6 +67,7 @@ section#about {
           font-size: 1.75rem;
           background: #ffad17;
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
           font-family: "Roboto Slab", serif;
           font-weight: bold;
