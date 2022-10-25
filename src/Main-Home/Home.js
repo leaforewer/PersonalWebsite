@@ -31,16 +31,16 @@ function Home() {
   return (
     <div id="main">
       <div className={isFormActive ? "" : "main-content-blur-content"}>
-        <div className="container-fluid">
-          <nav className="navbar main-nav fixed-top">
-            <a href="#home">
+        <nav className="navbar main-nav fixed-top">
+          <div className="container">
+            <a className="navbar-head" href="#home">
               <h1>
                 <div>A</div>
                 <div>C</div>
                 <div>E</div>
               </h1>
             </a>
-            <div className="nav-slider m-auto">
+            <div className="nav-slider ms-auto">
               <ul className="nav navbar-nav">
                 <li className="nav-item">
                   <a className="nav-link" href="#about">
@@ -52,51 +52,60 @@ function Home() {
                     Skills & Experience
                   </a>
                 </li>
-
+                <li className="nav-item">
+                  <a className="nav-link" href="/collections">
+                    Collections
+                  </a>
+                </li>
                 <li className="nav-item">
                   <div className="nav-link" onClick={handleFormToggle}>
                     Contact
                   </div>
                 </li>
               </ul>
-              <div id="hamburger" className={isActive ? "close" : "open"}>
-                <div className="three col">
-                  <div
-                    className="hamburger"
-                    id="hamburger-6"
-                    onClick={handleToggle}
-                  >
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                  </div>
-                </div>
-              </div>
             </div>
             {/* Mobile Nav Menu  Activated when scrolling*/}
-            <div
-              id="sidebar"
-              className={isActive ? "closed-sidebar" : "opened-sidebar"}
-            >
-              <div className="sidebar-head">
-                <h3>
-                  <div>Wander</div> <div>freely..</div>
-                </h3>
+
+            <div className={isActive ? "" : "menu-opened"}>
+              <div className="header">
+                <div className="burger-container" onClick={handleToggle}>
+                  <div id="burger">
+                    <div class="bar topBar"></div>
+                    <div class="bar btmBar"></div>
+                  </div>
+                </div>
+                <ul className="menu">
+                  <Fade delay={600}>
+                    <li className="menu-item">
+                      <a onClick={handleToggle} href="#about">
+                        About
+                      </a>
+                    </li>
+                  </Fade>
+                  <Fade delay={700}>
+                    <li className="menu-item">
+                      <a onClick={handleToggle} href="#skill">
+                        Skill & Experience
+                      </a>
+                    </li>
+                  </Fade>
+                  <Fade delay={800}>
+                    <li className="menu-item">
+                      <a onClick={handleToggle} href="/collections">
+                        Collections
+                      </a>
+                    </li>
+                  </Fade>
+                  <Fade delay={900}>
+                    <li className="menu-item">
+                      <div onClick={handleFormToggle}>Contact</div>
+                    </li>
+                  </Fade>
+                </ul>
               </div>
-              <ul className="mobile-nav-menu nav-menu">
-                <li className="i-2">
-                  <a href="#about">About</a>
-                </li>
-                <li className="i-3">
-                  <a href="#skill">Skills & Experience</a>
-                </li>
-                <li className="i-5">
-                  <div onClick={handleFormToggle}>Contact</div>
-                </li>
-              </ul>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div
           id="social-feed-container"
           className={isFeedActive ? "closeFeed" : "openFeed"}
@@ -221,7 +230,7 @@ function Home() {
                       id="description"
                       name="content"
                       cols="50"
-                      rows="9"
+                      rows="6"
                     ></textarea>
                   </p>
 

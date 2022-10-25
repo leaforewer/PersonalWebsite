@@ -24,7 +24,18 @@
     swell 7s ease -1.25s infinite;
   opacity: 1;
 }
+.footer-group footer ul li{
+  margin-left: 1rem;
+}
 
+@media only screen and (max-width: 550px){
+  .footer-group footer ul li{
+    margin-left: 0.25rem;
+  }
+  .footer-group footer span{
+    font-size: 0.85rem;
+  }
+}
 @keyframes wave {
   0% {
     margin-left: 0;

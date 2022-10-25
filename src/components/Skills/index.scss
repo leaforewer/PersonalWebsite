@@ -200,6 +200,7 @@ section#skill {
   }
   .exp-group {
     margin-top: 7%;
+    padding: 0em 0.75em;
     .col-xl-5 {
       padding: 2px;
       border-radius: 0.75em;
@@ -288,6 +289,24 @@ section#skill {
   }
   .exp-group .row {
     gap: 3rem;
+  }
+}
+@media only screen and (max-width: 550px) {
+  section#skill {
+    padding-top: 25%;
+  }
+  #experience .exp-group .col-xl-5 .ae {
+    flex-direction: column;
+    a {
+      text-align: center;
+      img {
+        background-color: #1d1d1d;
+        border: none;
+      }
+    }
+  }
+  section#skill .skill-content ul .progress-bar {
+    box-shadow: none !important;
   }
 }
 @media only screen and (max-width: 375px) {

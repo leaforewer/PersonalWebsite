@@ -18,6 +18,7 @@ $darkblue: #32989a;
 $darkgreen: #46a95b;
 $darkorange: #c78814;
 
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 $outline: 2px;
 @property --rotate {
   syntax: "<angle>";
@@ -55,57 +56,60 @@ a {
 }
 // Navbar
 .main-nav {
-  h1 {
-    font-family: "CoreCircus", sans-serif;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: 6rem;
-    text-align: center;
-    line-height: 1;
-    margin: 0;
-    letter-spacing: 5px;
-    padding: 1rem 1rem;
-    margin: 0rem 15rem 0rem 8rem;
-    transition: 0.4s all ease;
-    div:first-of-type {
-      color: $red;
-      text-shadow: -1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple,
-        1px 1px 0 $purple, 1px 0px 0px $orange, 0px 1px 0px $orange,
-        2px 1px 0px $orange, 1px 2px 0px $orange, 3px 2px 0px $orange,
-        2px 3px 0px $orange, 4px 3px 0px $orange, 3px 4px 0px $orange,
-        5px 4px 0px $orange, 3px 5px 0px $purple, 6px 5px 0px $purple,
-        -1px 2px 0 black, 0 3px 0 $purple, 1px 4px 0 $purple,
-        2px 5px 0px $purple, 2px -1px 0 $purple, 3px 0 0 $purple,
-        4px 1px 0 $purple, 5px 2px 0px $purple, 6px 3px 0 $purple,
-        7px 4px 0 $purple, 7px 7px 10px $red;
-    }
-    div:last-of-type {
-      color: $blue;
-      text-shadow: -1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple,
-        1px 1px 0 $purple, 1px 0px 0px $red, 0px 1px 0px $red, 2px 1px 0px $red,
-        1px 2px 0px $red, 3px 2px 0px $red, 2px 3px 0px $red, 4px 3px 0px $red,
-        3px 4px 0px $red, 5px 4px 0px $red, 3px 5px 0px $purple,
-        6px 5px 0px $purple, -1px 2px 0 black, 0 3px 0 $purple,
-        1px 4px 0 $purple, 2px 5px 0px $purple, 2px -1px 0 $purple,
-        3px 0 0 $purple, 4px 1px 0 $purple, 5px 2px 0px $purple,
-        6px 3px 0 $purple, 7px 4px 0 $purple, 7px 7px 10px $blue;
-    }
-    div {
-      color: $orange;
-      text-shadow: -1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple,
-        1px 1px 0 $purple, 1px 0px 0px $green, 0px 1px 0px $green,
-        2px 1px 0px $green, 1px 2px 0px $green, 3px 2px 0px $green,
-        2px 3px 0px $green, 4px 3px 0px $green, 3px 4px 0px $green,
-        5px 4px 0px $green, 3px 5px 0px $purple, 6px 5px 0px $purple,
-        -1px 2px 0 black, 0 3px 0 $purple, 1px 4px 0 $purple,
-        2px 5px 0px $purple, 2px -1px 0 $purple, 3px 0 0 $purple,
-        4px 1px 0 $purple, 5px 2px 0px $purple, 6px 3px 0 $purple,
-        7px 4px 0 $purple, 7px 7px 10px $orange;
-    }
-    div:hover {
-      -webkit-animation: jello-horizontal 0.9s both;
-      animation: jello-horizontal 0.9s both;
+  .navbar-head {
+    z-index: 3;
+    h1 {
+      font-family: "CoreCircus", sans-serif;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 6rem;
+      text-align: center;
+      line-height: 1;
+      margin: 0;
+      letter-spacing: 5px;
+      padding: 1rem 1rem;
+      transition: 0.4s all ease;
+      div:first-of-type {
+        color: $red;
+        text-shadow: -1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple,
+          1px 1px 0 $purple, 1px 0px 0px $orange, 0px 1px 0px $orange,
+          2px 1px 0px $orange, 1px 2px 0px $orange, 3px 2px 0px $orange,
+          2px 3px 0px $orange, 4px 3px 0px $orange, 3px 4px 0px $orange,
+          5px 4px 0px $orange, 3px 5px 0px $purple, 6px 5px 0px $purple,
+          -1px 2px 0 black, 0 3px 0 $purple, 1px 4px 0 $purple,
+          2px 5px 0px $purple, 2px -1px 0 $purple, 3px 0 0 $purple,
+          4px 1px 0 $purple, 5px 2px 0px $purple, 6px 3px 0 $purple,
+          7px 4px 0 $purple, 7px 7px 10px $red;
+      }
+      div:last-of-type {
+        color: $blue;
+        text-shadow: -1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple,
+          1px 1px 0 $purple, 1px 0px 0px $red, 0px 1px 0px $red,
+          2px 1px 0px $red, 1px 2px 0px $red, 3px 2px 0px $red, 2px 3px 0px $red,
+          4px 3px 0px $red, 3px 4px 0px $red, 5px 4px 0px $red,
+          3px 5px 0px $purple, 6px 5px 0px $purple, -1px 2px 0 black,
+          0 3px 0 $purple, 1px 4px 0 $purple, 2px 5px 0px $purple,
+          2px -1px 0 $purple, 3px 0 0 $purple, 4px 1px 0 $purple,
+          5px 2px 0px $purple, 6px 3px 0 $purple, 7px 4px 0 $purple,
+          7px 7px 10px $blue;
+      }
+      div {
+        color: $orange;
+        text-shadow: -1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple,
+          1px 1px 0 $purple, 1px 0px 0px $green, 0px 1px 0px $green,
+          2px 1px 0px $green, 1px 2px 0px $green, 3px 2px 0px $green,
+          2px 3px 0px $green, 4px 3px 0px $green, 3px 4px 0px $green,
+          5px 4px 0px $green, 3px 5px 0px $purple, 6px 5px 0px $purple,
+          -1px 2px 0 black, 0 3px 0 $purple, 1px 4px 0 $purple,
+          2px 5px 0px $purple, 2px -1px 0 $purple, 3px 0 0 $purple,
+          4px 1px 0 $purple, 5px 2px 0px $purple, 6px 3px 0 $purple,
+          7px 4px 0 $purple, 7px 7px 10px $orange;
+      }
+      div:hover {
+        -webkit-animation: jello-horizontal 0.9s both;
+        animation: jello-horizontal 0.9s both;
+      }
     }
   }
 
@@ -147,8 +151,6 @@ a {
   }
   h1 {
     font-size: 4.5rem;
-    padding: 0rem 0.2rem 1rem 0.2rem;
-    margin: 0rem 15rem 0rem 15rem;
   }
   .nav-item {
     a,
@@ -186,275 +188,120 @@ a {
   }
 }
 
-// Sidebar Navgigation
-#sidebar {
-  height: 100vh;
-  position: fixed;
-  right: -20px;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #d4d4d4;
-  transition: 0.6s all ease;
-  background-image: url("../images/sidebar-bg3.jpg");
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: luminosity;
-  box-shadow: inset 0 0 50px #1d1d1d;
-}
-.sidebar-head {
-  position: fixed;
-  top: 25px;
-  margin-right: 15em;
-  color: #1d1d1d;
-  div:first-of-type {
-    font-size: 2.5rem;
-    color: $red;
-    text-shadow: -1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple,
-      1px 1px 0 $purple, 1px 0px 0px $orange, 0px 1px 0px $orange,
-      2px 1px 0px $orange, 1px 2px 0px $orange, 3px 2px 0px $orange,
-      2px 3px 0px $orange, 4px 3px 0px $orange, 3px 4px 0px $orange,
-      5px 4px 0px $orange, 3px 5px 0px $purple, 6px 5px 0px $purple,
-      -1px 2px 0 black, 0 3px 0 $purple, 1px 4px 0 $purple, 2px 5px 0px $purple,
-      2px -1px 0 $purple, 3px 0 0 $purple, 4px 1px 0 $purple,
-      5px 2px 0px $purple, 6px 3px 0 $purple, 7px 4px 0 $purple,
-      7px 7px 10px $red;
-    &:hover {
-      -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-      animation: heartbeat 1.5s ease-in-out infinite both;
-    }
-  }
-  div:last-of-type {
-    font-size: 2rem;
-    margin-left: 2.5rem;
-    color: $orange;
-    text-shadow: -1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple,
-      1px 1px 0 $purple, 1px 0px 0px $red, 0px 1px 0px $red, 2px 1px 0px $red,
-      1px 2px 0px $red, 3px 2px 0px $red, 2px 3px 0px $red, 4px 3px 0px $red,
-      3px 4px 0px $red, 5px 4px 0px $red, 3px 5px 0px $purple,
-      6px 5px 0px $purple, -1px 2px 0 black, 0 3px 0 $purple, 1px 4px 0 $purple,
-      2px 5px 0px $purple, 2px -1px 0 $purple, 3px 0 0 $purple,
-      4px 1px 0 $purple, 5px 2px 0px $purple, 6px 3px 0 $purple,
-      7px 4px 0 $purple, 7px 7px 10px $red;
-    &:hover {
-      -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-      animation: heartbeat 1.5s ease-in-out infinite both;
-    }
-  }
-}
-
-.closed-sidebar {
-  width: 0px;
-  opacity: 0;
-}
-.opened-sidebar {
-  width: 450px;
-  opacity: 1;
-}
-.row .three {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #ecf0f1;
-  text-align: center;
-}
-#hamburger {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  z-index: 3;
-  transition: 0.3s all ease;
-  &.open {
-    // background-color: #1d1d1d;
-    border-radius: 10px;
-    padding: 0 0.16rem 0 0;
-    .hamburger .line {
-      background-color: #1d1d1d !important;
-    }
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-}
-.hamburger .line {
-  width: 32px;
-  height: 3px;
-  background-color: #ecf0f1;
-  display: block;
-  margin: 8px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.hamburger:hover {
-  cursor: pointer;
-}
-#hamburger-6.is-active {
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition-delay: 0.6s;
-  -o-transition-delay: 0.6s;
-  transition-delay: 0.6s;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-#hamburger-6.is-active .line:nth-child(2) {
-  width: 0px;
-}
-
-#hamburger-6.is-active .line:nth-child(1),
-#hamburger-6.is-active .line:nth-child(3) {
-  -webkit-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
-
-#hamburger-6.is-active .line:nth-child(1) {
-  -webkit-transform: translateY(9px);
-  -ms-transform: translateY(9px);
-  -o-transform: translateY(9px);
-  transform: translateY(9px);
-}
-
-#hamburger-6.is-active .line:nth-child(3) {
-  -webkit-transform: translateY(-13px) rotate(90deg);
-  -ms-transform: translateY(-13px) rotate(90deg);
-  -o-transform: translateY(-13px) rotate(90deg);
-  transform: translateY(-13px) rotate(90deg);
-}
-
 // Mobile Navigation Menu
 
-.nav-menu {
-  position: relative;
-  transform: skewY(-15deg);
-  margin-top: auto;
-  margin-bottom: 25%;
-  .i-1 {
-    z-index: 6;
-    &:hover {
-      background: $red;
-      &::before {
-        background: $darkred;
-      }
-      &::after {
-        background: $darkred;
+.header {
+  position: fixed;
+  display: block;
+  top: 0;
+  right: 0;
+  height: 75px;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease-out, background 1s ease-out;
+  transition-delay: 0.2s;
+  z-index: 1;
+  .burger-container {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    z-index: 1;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.3s $cubic;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    #burger {
+      width: 30px;
+      height: 8px;
+      position: relative;
+      display: block;
+      margin: -4px auto 0;
+      top: 50%;
+      .bar {
+        width: 100%;
+        height: 2px;
+        display: block;
+        position: relative;
+        background: #fff;
+        transition: all 0.3s $cubic;
+        transition-delay: 0s;
+        &.topBar {
+          transform: translateY(0px) rotate(0deg);
+        }
+        &.btmBar {
+          transform: translateY(6px) rotate(0deg);
+        }
       }
     }
   }
-  .i-2 {
-    z-index: 5;
-    &:hover {
-      background: $blue;
-      &::before {
-        background: $darkblue;
-      }
-      &::after {
-        background: $darkblue;
+  ul.menu {
+    position: relative;
+    display: block;
+    padding: 0px 48px 0;
+    top: 20%;
+    display: none;
+    list-style: none;
+    li.menu-item {
+      border-bottom: 1px solid #333;
+      margin-top: 5px;
+      transform: scale(1.15) translateY(-30px);
+      opacity: 0;
+      display: none;
+      a,
+      div {
+        display: block;
+        position: relative;
+        color: #fff;
+        font-family: "Sen", sans-serif;
+        font-weight: 100;
+        text-decoration: none;
+        font-size: 22px;
+        line-height: 2.35;
+        font-weight: 200;
+        width: 100%;
       }
     }
   }
-  .i-3 {
-    z-index: 4;
-    &:hover {
-      background: $orange;
-      &::before {
-        background: $darkorange;
-      }
-      &::after {
-        background: $darkorange;
-      }
-    }
-  }
-  .i-4 {
+}
+.menu-opened {
+  transition: all 0.3s ease-in, background 0.5s ease-in;
+  transition-delay: 0.25s;
+  .header {
+    height: 100vh;
+    background-color: #000;
+    transition: all 0.3s ease-in, background 0.5s ease-in;
+    transition-delay: 0.25s;
     z-index: 3;
-    &:hover {
-      background: $green;
-      &::before {
-        background: $darkgreen;
+    .burger-container {
+      transform: rotate(90deg);
+      #burger {
+        .bar {
+          transition: all 0.4s $cubic;
+          transition-delay: 0.2s;
+          &.topBar {
+            transform: translateY(5px) rotate(45deg);
+          }
+          &.btmBar {
+            transform: translateY(3px) rotate(-45deg);
+          }
+        }
       }
-      &::after {
-        background: $darkgreen;
+    }
+    ul.menu {
+      display: block;
+      li.menu-item {
+        opacity: 1;
+        display: block;
       }
     }
   }
-  .i-5 {
-    z-index: 2;
-    &:hover {
-      background: $red;
-      &::before {
-        background: $darkred;
-      }
-      &::after {
-        background: $darkred;
-      }
-    }
-  }
-}
-.nav-menu li {
-  position: relative;
-  list-style: none;
-  width: 250px;
-  padding: 60px;
-  background: #1d1d1d;
-  transition: 0.5s;
-  cursor: pointer;
-}
-.nav-menu li:hover {
-  background: $blue;
-  transform: translateX(-50px);
 }
 
-.nav-menu li::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -40px;
-  width: 40px;
-  height: 100%;
-  background: #2e3133;
-  transform-origin: right;
-  transform: skewY(45deg);
-  transition: 0.5s;
-}
-.nav-menu li:hover::before {
-  background: #1f5378;
-}
-.nav-menu li::after {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: 0px;
-  width: 100%;
-  height: 40px;
-  background: #35383e;
-  transform-origin: bottom;
-  transform: skewX(45deg);
-  transition: 0.5s;
-}
-.nav-menu li:hover::after {
-  background: #2982b9;
-}
-.nav-menu li a {
-  text-decoration: none;
-  color: #999;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: 0.5s;
-}
-.nav-menu li:hover a {
-  color: #fff;
-}
-.nav-menu li:last-child::after {
-  box-shadow: -190px 200px 20px rgb(0 0 0 / 50%);
-}
+// Sidebar Navgigation Feed
 
 #social-feed-container {
   position: fixed;
@@ -576,8 +423,8 @@ section#home {
         z-index: 0;
         width: 850px !important;
         height: 850px !important;
-        right: 10%;
-        top: 5%;
+        right: 9.5%;
+        top: 7%;
         -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
         animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
       }
@@ -628,7 +475,7 @@ section#home {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        top: 5%;
+        top: 2%;
         right: 8.5%;
         .frame {
           background: #1d1d1df7;
@@ -702,7 +549,7 @@ section#home {
     cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
   animation: slide-out-blurred-top 0.45s cubic-bezier(0.755, 0.05, 0.855, 0.06)
     both;
-    opacity: 0;
+  opacity: 0;
 }
 .form-modal-frame {
   display: block;
@@ -864,8 +711,8 @@ section#home {
   }
 }
 @media only screen and (max-width: 1024px) {
-  .main-nav h1 {
-    margin: 0 5rem;
+  .main-nav .navbar-head h1 {
+    font-size: 5rem;
   }
   section#home {
     margin-top: 13%;
@@ -874,9 +721,15 @@ section#home {
     margin-left: 2em;
     margin-bottom: 30%;
   }
-  section#home div.hm .masthead .canvas-frame,
+  section#home div.hm .masthead .canvas-frame {
+    top: -8%;
+  }
   section#home div.hm .masthead canvas {
-    top: -7%;
+    top: -4%;
+  }
+  .main-nav .nav-slider .navbar-nav li.nav-item a,
+  .main-nav .nav-slider .navbar-nav li.nav-item div {
+    font-size: 1rem;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -888,10 +741,19 @@ section#home {
     width: 100%;
   }
 }
+@media only screen and (min-width: 769px) {
+  .header{
+    display: none;
+  }
+}
 @media only screen and (max-width: 768px) {
-  .main-nav h1 {
+  .main-nav .navbar-head h1 {
     margin: 0rem 2rem;
     font-size: 5rem;
+    padding: 0.5rem 0rem;
+  }
+  .navbar-shrink .navbar-head h1 {
+    font-size: 4.5rem;
   }
   section#home div.hm .masthead {
     justify-content: center;
@@ -938,9 +800,20 @@ section#home {
     }
   }
 }
+@media only screen and (min-width: 550px){
+  .header ul.menu{
+    padding: 0px 75px 0;
+  }
+}
 @media only screen and (max-width: 550px) {
-  .main-nav h1 {
+
+  .main-nav .navbar-head h1 {
     margin: 0rem 1rem;
+    font-size: 4.5rem;
+    padding: 0;
+    padding-bottom: 0.5rem;
+  }
+  .navbar-shrink .navbar-head h1 {
     font-size: 4rem;
   }
   section#home div.hm .masthead .canvas-frame {
@@ -969,9 +842,6 @@ section#home {
   }
 }
 @media only screen and (max-width: 400px) {
-  section#home div.hm .masthead .canvas-frame {
-    right: 2%;
-  }
   section#home div.hm .masthead .canvas-frame .frame {
     max-width: 315px;
     max-height: 450px;

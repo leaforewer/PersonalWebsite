@@ -32,7 +32,7 @@ function Contact() {
                 <br />
                 <br />
                 Visit my <a href="https://www.linkedin.com/in/ahmet-erd/">LinkedIn</a> profile for more details or
-                just <a href="#contact">contact</a> me.
+                just <a href="#home">contact</a> me.
               </div>
             </Fade>
           </div>

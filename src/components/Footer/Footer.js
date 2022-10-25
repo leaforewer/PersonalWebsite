@@ -12,22 +12,22 @@ function About() {
         <div className="container">
           <div className="d-flex flex-wrap justify-content-between align-items-center py-5">
             <div className="col-md-4 d-flex align-items-center">
-              <span className="mb-3 mb-md-0 text-muted">
+              <span className="text-muted">
                 © 2022 Leaforewer, v1.0
               </span>
             </div>
             <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-              <li className="ms-3">
+              <li>
                 <a href="https://www.linkedin.com/in/ahmet-erd/">
                   <i className="bx bxl-linkedin-square"></i>
                 </a>
               </li>
-              <li className="ms-3">
+              <li>
                 <a href="https://github.com/leaforewer">
                   <i className="bx bxl-github"></i>
                 </a>
               </li>
-              <li className="ms-3">
+              <li>
                 <a href="mailto: leaforewer.net@gmail.com">
                   <i className="bx bxl-gmail"></i>
                 </a>

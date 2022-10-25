@@ -1,9 +1,26 @@
 function notfound() {
-    return (
-      <div className="notfound">
-        404 ERROR NOT found
+  const styleLottie = {
+    height: "100%",
+    position: "absolute",
+    top: "0",
+    left: "0",
+  };
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <lottie-player
+            src="https://assets8.lottiefiles.com/packages/lf20_j3gumpgp.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+            style={styleLottie}
+          ></lottie-player>
+        </div>
       </div>
-    );
-  }
-  
-  export default notfound;
+    </div>
+  );
+}
+
+export default notfound;
